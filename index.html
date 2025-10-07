@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maryam Gill • Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">MG</div>
+        <div class="brand-text">
+          <div class="name">Maryam <span>Gill</span></div>
+          <div class="role">Full-Stack Developer · AI & ML · UI/UX</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="open menu">☰</button>
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="themeToggle" class="theme-btn" aria-label="toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-left reveal">
+          <h1>Hi, I'm <span>Maryam Fazal Gill</span></h1>
+          <p class="lead">I build intelligent, user-friendly apps that merge clean UX with practical AI — from face-analysis systems to full-stack applications.</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="Maryam_Gill_Resume.pdf" download>Download Resume</a>
+          </div>
+          <div class="quick-skills">
+            <span>React</span><span>Node.js</span><span>Flask</span><span>Python</span><span>TensorFlow</span>
+          </div>
+        </div>
+
+        <div class="hero-right reveal">
+          <div class="profile-card">
+            <div class="photo-wrap">
+              <img src="images/yourphoto.jpg" alt="Maryam Gill" id="profilePhoto" />
+            </div>
+            <div class="profile-meta">
+              <div class="meta-name">Maryam Gill</div>
+              <div class="meta-sub">Open to internships & freelance</div>
+              <div class="profile-links">
+                <a href="https://github.com/maryamgill134" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/maryam-fazal-gill-4401a7269" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="container reveal">
+        <h2>About Me</h2>
+        <p>I’m a Full-Stack Developer with a strong passion for AI & Machine Learning. I specialize in creating responsive interfaces, Flask-based APIs, and intelligent apps that make technology more human and efficient.</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills">
+      <div class="container reveal">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill">HTML</div><div class="skill">CSS</div><div class="skill">JavaScript</div>
+          <div class="skill">React</div><div class="skill">React Native</div><div class="skill">Node.js</div>
+          <div class="skill">Flask</div><div class="skill">Python</div><div class="skill">TensorFlow / PyTorch</div>
+          <div class="skill">Figma (UI/UX)</div><div class="skill">MongoDB</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+      <div class="container reveal">
+        <h2>Selected Projects</h2>
+        <div class="projects-grid">
+          
+          <article class="proj-card" data-proj="smartface" tabindex="0" role="button" aria-pressed="false">
+            <div class="proj-tag">AI · Computer Vision</div>
+            <h3>SmartFaceDetectorPro</h3>
+            <p>A Flask-based AI app for real-time face, eyes & smile detection with emotion recognition powered by a trained CNN model. Includes snapshot saving, SQLite history logs, CSV report export, and a clean HTML dashboard for live monitoring.</p>
+            <ul class="proj-features">
+              <li>✅ Real-time Face, Eyes & Smile Detection</li>
+              <li>✅ Emotion Recognition (CNN)</li>
+              <li>✅ Snapshot & History Logs (SQLite)</li>
+              <li>✅ CSV Report Export</li>
+              <li>✅ Live Web Dashboard (HTML, CSS, JS)</li>
+            </ul>
+            <a href="https://github.com/maryamgill134/SmartFaceDetectorPro" target="_blank" class="btn ghost">View Project</a>
+          </article>
+
+          <article class="proj-card" data-proj="grooming" tabindex="0" role="button" aria-pressed="false">
+            <div class="proj-tag">Flask · ML</div>
+            <h3>AI Grooming Assistant</h3>
+            <p>Flask web app that analyzes facial features and gives personalized grooming recommendations using deep learning models.</p>
+            <a href="https://github.com/maryamgill134/ai_grooming_assistant" target="_blank" class="btn ghost">View Project</a>
+          </article>
+
+          <article class="proj-card" data-proj="stayease" tabindex="0" role="button" aria-pressed="false">
+            <div class="proj-tag">Full-Stack</div>
+            <h3>StayEase (FYP)</h3>
+            <p>Smart rental management system that connects landlords and tenants with secure payments, listings, and property verification.</p>
+            <a href="https://github.com/maryamgill134/StayEase_FYP" target="_blank" class="btn ghost">View Project</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container reveal">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:maryamgill134@gmail.com">maryamgill134@gmail.com</a> · Phone: <a href="tel:+923046257278">0304-6257278</a></p>
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:maryamgill134@gmail.com">Email Me</a>
+          <a class="btn ghost" href="https://github.com/maryamgill134" target="_blank">View GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Maryam Gill — Built with ♥</small>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
