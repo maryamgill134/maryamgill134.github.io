@@ -1,410 +1,435 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Maryam Gill - Full-Stack Developer specializing in AI, ML, and UI/UX. Building intelligent, user-friendly applications." />
-  <title>Maryam Gill • Full-Stack Developer & AI Specialist</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maryam Gill • Full-Stack Developer & AI Specialist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="logo">MG</div>
-        <div class="brand-text">
-          <div class="name">Maryam <span>Fazal Gill</span></div>
-          <div class="role">Full-Stack Developer · AI & ML Specialist</div>
-        </div>
-      </div>
-
-      <nav class="nav">
-        <button class="nav-toggle" aria-label="open menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul class="nav-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="themeToggle" class="theme-btn" aria-label="toggle theme">
-          <span class="theme-icon">🌙</span>
-        </button>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section id="home" class="hero section">
-      <div class="container hero-grid">
-        <div class="hero-left reveal">
-          <div class="hero-badge">
-            <span>Available for Internships and job opportunities</span>
-          </div>
-          <h1>Building <span class="gradient-text">Intelligent</span> Digital Experiences</h1>
-          <p class="lead">Full-Stack Developer specializing in AI & Machine Learning. I create responsive applications that merge clean UX with practical AI solutions.</p>
-          <div class="hero-ctas">
-            <a class="btn primary" href="#projects">
-              <span>View Projects</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="currentColor"/>
-              </svg>
-            </a>
-            <a class="btn secondary" href="#contact">Get In Touch</a>
-          </div>
-          <div class="quick-stats">
-            <div class="stat">
-              <span class="stat-number">10+</span>
-              <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">3</span>
-              <span class="stat-label">AI Models</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">1</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-right reveal">
-          <div class="profile-card">
-            <div class="profile-bg"></div>
-            <div class="photo-wrap">
-              <img src="images/yourphoto.jpg" alt="Maryam Gill" id="profilePhoto" />
-              <div class="photo-overlay"></div>
-            </div>
-            <div class="profile-meta">
-              <div class="meta-name">Maryam Gill</div>
-              <div class="meta-sub">Full-Stack & AI Developer</div>
-              <div class="profile-links">
-                <a href="https://github.com/maryamgill134" target="_blank" rel="noopener" aria-label="GitHub">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 0C5.37 0 0 5.37 0 12C0 17.31 3.435 21.795 8.205 23.385C8.805 23.49 9.03 23.13 9.03 22.815C9.03 22.53 9.015 21.585 9.015 20.55C6 21.135 5.22 19.845 4.98 19.17C4.845 18.825 4.26 17.76 3.75 17.475C3.33 17.25 2.73 16.665 3.735 16.65C4.68 16.635 5.355 17.55 5.58 17.91C6.66 19.725 8.385 19.215 9.075 18.9C9.18 18.12 9.495 17.595 9.84 17.295C7.17 16.995 4.38 15.96 4.38 11.37C4.38 10.065 4.845 8.985 5.61 8.145C5.49 7.845 5.07 6.615 5.73 4.965C5.73 4.965 6.735 4.65 9.03 6.195C9.99 5.925 11.01 5.79 12.03 5.79C13.05 5.79 14.07 5.925 15.03 6.195C17.325 4.635 18.33 4.965 18.33 4.965C18.99 6.615 18.57 7.845 18.45 8.145C19.215 8.985 19.68 10.05 19.68 11.37C19.68 15.975 16.875 16.995 14.205 17.295C14.64 17.67 15.015 18.39 15.015 19.515C15.015 21.12 15 22.41 15 22.815C15 23.13 15.225 23.505 15.825 23.385C20.565 21.795 24 17.295 24 12C24 5.37 18.63 0 12 0Z" fill="currentColor"/>
-                  </svg>
-                </a>
-                <a href="https://linkedin.com/in/maryam-fazal-gill-4401a7269" target="_blank" rel="noopener" aria-label="LinkedIn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.368C3.274 4.23 4.194 3.305 5.337 3.305C6.477 3.305 7.401 4.23 7.401 5.368C7.401 6.507 6.476 7.433 5.337 7.433ZM7.119 20.452H3.555V9H7.119V20.452ZM22.225 0H1.771C0.792 0 0 0.774 0 1.729V22.271C0 23.227 0.792 24 1.771 24H22.222C23.2 24 24 23.227 24 22.271V1.729C24 0.774 23.2 0 22.222 0H22.225Z" fill="currentColor"/>
-                  </svg>
-                </a>
-                <a href="mailto:maryamgill134@gmail.com" aria-label="Email">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="currentColor"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section about">
-      <div class="container reveal">
-        <div class="section-header">
-          <span class="section-label">About Me</span>
-          <h2>Turning Complex Problems Into Simple Solutions</h2>
-        </div>
-        <div class="about-content">
-          <div class="about-text">
-            <p>I'm a passionate Full-Stack Developer with a strong focus on AI & Machine Learning. I specialize in creating responsive interfaces, Flask-based APIs, and intelligent applications that make technology more accessible and efficient.</p>
-            <p>My approach combines technical expertise with user-centered design, ensuring that every solution I build is not only functional but also intuitive and enjoyable to use.</p>
-            <div class="about-highlights">
-              <div class="highlight">
-                <div class="highlight-icon">🚀</div>
-                <div class="highlight-text">
-                  <h4>Fast Development</h4>
-                  <p>Efficient workflows and modern tools</p>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <div class="logo">MG</div>
+                    <span class="name">Maryam Gill</span>
                 </div>
-              </div>
-              <div class="highlight">
-                <div class="highlight-icon">🎯</div>
-                <div class="highlight-text">
-                  <h4>Problem Solving</h4>
-                  <p>Analytical approach to complex challenges</p>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
-              </div>
-              <div class="highlight">
-                <div class="highlight-icon">🤝</div>
-                <div class="highlight-text">
-                  <h4>Collaboration</h4>
-                  <p>Strong communication and teamwork</p>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">Available for Internships</div>
+                    <h1 class="hero-title">Building <span class="gradient-text">Intelligent</span> Digital Experiences</h1>
+                    <p class="hero-description">Full-Stack Developer specializing in AI & Machine Learning. I create responsive applications that merge clean UX with practical AI solutions.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">AI Models</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                
+                <div class="hero-visual">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <img src="images/yourphoto.jpg" alt="Maryam Gill">
+                        </div>
+                        <div class="profile-info">
+                            <h3>Maryam Gill</h3>
+                            <p>Full-Stack & AI Developer</p>
+                            <div class="social-links">
+                                <a href="https://github.com/maryamgill134" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/maryam-fazal-gill-4401a7269" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="mailto:maryamgill134@gmail.com" aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="about-cta">
-            <a class="btn primary" href="Maryam_Gill_Resume.pdf" download>
-              <span>Download Resume</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M4.66675 6.66667L8.00008 10L11.3334 6.66667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M8 10V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section skills">
-      <div class="container reveal">
-        <div class="section-header">
-          <span class="section-label">Skills & Technologies</span>
-          <h2>Technical Expertise</h2>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">About Me</span>
+                <h2 class="section-title">Turning Complex Problems Into Simple Solutions</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate Full-Stack Developer with a strong focus on AI & Machine Learning. I specialize in creating responsive interfaces, Flask-based APIs, and intelligent applications that make technology more accessible and efficient.</p>
+                    <p>My approach combines technical expertise with user-centered design, ensuring that every solution I build is not only functional but also intuitive and enjoyable to use.</p>
+                    
+                    <div class="highlights">
+                        <div class="highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="highlight-text">
+                                <h4>Fast Development</h4>
+                                <p>Efficient workflows and modern tools</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div class="highlight-text">
+                                <h4>Problem Solving</h4>
+                                <p>Analytical approach to complex challenges</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="highlight-text">
+                                <h4>Collaboration</h4>
+                                <p>Strong communication and teamwork</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-actions">
+                    <a href="Maryam_Gill_Resume.pdf" class="btn btn-primary" download>
+                        <span>Download Resume</span>
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="skills-container">
-          <div class="skill-category">
-            <h3>Frontend</h3>
-            <div class="skills-grid">
-              <div class="skill">HTML5</div>
-              <div class="skill">CSS3</div>
-              <div class="skill">JavaScript</div>
-              <div class="skill">React</div>
-              <div class="skill">React Native</div>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3>Backend</h3>
-            <div class="skills-grid">
-              <div class="skill">Node.js</div>
-              <div class="skill">Flask</div>
-              <div class="skill">Python</div>
-              <div class="skill">Firebase</div>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3>AI & ML</h3>
-            <div class="skills-grid">
-              <div class="skill">TensorFlow</div>
-              <div class="skill">PyTorch</div>
-              <div class="skill">Computer Vision</div>
-              <div class="skill">CNN</div>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3>Tools</h3>
-            <div class="skills-grid">
-              <div class="skill">Figma</div>
-              <div class="skill">Git</div>
-              <div class="skill">SQLite</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section projects">
-      <div class="container reveal">
-        <div class="section-header">
-          <span class="section-label">My Work</span>
-          <h2>Featured Projects</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Skills & Technologies</span>
+                <h2 class="section-title">Technical Expertise</h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill">HTML5</div>
+                        <div class="skill">CSS3</div>
+                        <div class="skill">JavaScript</div>
+                        <div class="skill">React</div>
+                        <div class="skill">React Native</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skills-grid">
+                        <div class="skill">Node.js</div>
+                        <div class="skill">Flask</div>
+                        <div class="skill">Python</div>
+                        <div class="skill">MongoDB</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>AI & ML</h3>
+                    <div class="skills-grid">
+                        <div class="skill">TensorFlow</div>
+                        <div class="skill">PyTorch</div>
+                        <div class="skill">Computer Vision</div>
+                        <div class="skill">CNN</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill">Figma</div>
+                        <div class="skill">Git</div>
+                        <div class="skill">SQLite</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="projects-grid">
-          
-          <article class="proj-card" data-proj="smartface">
-            <div class="proj-image">
-              <div class="proj-overlay">
-                <button class="proj-view-btn">View Details</button>
-              </div>
-              <div class="proj-tag">AI · Computer Vision</div>
-            </div>
-            <div class="proj-content">
-              <h3>SmartFaceDetectorPro</h3>
-              <p>A Flask-based AI application for real-time face, eyes & smile detection with emotion recognition powered by a trained CNN model.</p>
-              <ul class="proj-features">
-                <li>Real-time Face, Eyes & Smile Detection</li>
-                <li>Emotion Recognition (CNN)</li>
-                <li>Snapshot & History Logs (SQLite)</li>
-                <li>CSV Report Export</li>
-                <li>Live Web Dashboard</li>
-              </ul>
-              <div class="proj-tech">
-                <span>Python</span>
-                <span>Flask</span>
-                <span>TensorFlow</span>
-                <span>OpenCV</span>
-              </div>
-              <div class="proj-actions">
-                <a href="https://github.com/maryamgill134/SmartFaceDetectorPro" target="_blank" class="btn primary">View Code</a>
-                <button class="btn ghost view-details" data-proj="smartface">Details</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="proj-card" data-proj="grooming">
-            <div class="proj-image">
-              <div class="proj-overlay">
-                <button class="proj-view-btn">View Details</button>
-              </div>
-              <div class="proj-tag">Flask · ML</div>
-            </div>
-            <div class="proj-content">
-              <h3>AI Grooming Assistant</h3>
-              <p>Flask web app that analyzes facial features and provides personalized grooming recommendations using deep learning models.</p>
-              <ul class="proj-features">
-                <li>Facial Feature Analysis</li>
-                <li>Personalized Recommendations</li>
-                <li>Deep Learning Models</li>
-                <li>User-Friendly Interface</li>
-              </ul>
-              <div class="proj-tech">
-                <span>Python</span>
-                <span>Flask</span>
-                <span>Deep Learning</span>
-                <span>HTML/CSS</span>
-              </div>
-              <div class="proj-actions">
-                <a href="https://github.com/maryamgill134/ai_grooming_assistant" target="_blank" class="btn primary">View Code</a>
-                <button class="btn ghost view-details" data-proj="grooming">Details</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="proj-card" data-proj="stayease">
-            <div class="proj-image">
-              <div class="proj-overlay">
-                <button class="proj-view-btn">View Details</button>
-              </div>
-              <div class="proj-tag">Full-Stack</div>
-            </div>
-            <div class="proj-content">
-              <h3>StayEase (FYP)</h3>
-              <p>Smart rental management system connecting landlords and tenants with secure payments, listings, and property verification.</p>
-              <ul class="proj-features">
-                <li>Property Listings</li>
-                <li>Secure Payment System</li>
-                <li>User Role Management</li>
-                <li>Property Verification</li>
-                <li>Booking Workflow</li>
-              </ul>
-              <div class="proj-tech">
-                <span>React Native</span>
-                <span>Firebase</span>
-                <span>Bert Model</span>
-                <span>Stripe API</span>
-              </div>
-              <div class="proj-actions">
-                <a href="https://github.com/maryamgill134/StayEase_FYP" target="_blank" class="btn primary">View Code</a>
-                <button class="btn ghost view-details" data-proj="stayease">Details</button>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section contact">
-      <div class="container reveal">
-        <div class="section-header">
-          <span class="section-label">Get In Touch</span>
-          <h2>Let's Work Together</h2>
-          <p>I'm currently available for internships and freelance projects. Feel free to reach out if you'd like to collaborate!</p>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-project="smartface">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <button class="project-view-btn">View Details</button>
+                        </div>
+                        <div class="project-tag">AI · Computer Vision</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>SmartFaceDetectorPro</h3>
+                        <p>A Flask-based AI application for real-time face, eyes & smile detection with emotion recognition powered by a trained CNN model.</p>
+                        
+                        <ul class="project-features">
+                            <li>Real-time Face, Eyes & Smile Detection</li>
+                            <li>Emotion Recognition (CNN)</li>
+                            <li>Snapshot & History Logs (SQLite)</li>
+                            <li>CSV Report Export</li>
+                            <li>Live Web Dashboard</li>
+                        </ul>
+                        
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>TensorFlow</span>
+                            <span>OpenCV</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://github.com/maryamgill134/SmartFaceDetectorPro" target="_blank" class="btn btn-primary">View Code</a>
+                            <button class="btn btn-outline view-details" data-project="smartface">Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-project="grooming">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <button class="project-view-btn">View Details</button>
+                        </div>
+                        <div class="project-tag">Flask · ML</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Grooming Assistant</h3>
+                        <p>Flask web app that analyzes facial features and provides personalized grooming recommendations using deep learning models.</p>
+                        
+                        <ul class="project-features">
+                            <li>Facial Feature Analysis</li>
+                            <li>Personalized Recommendations</li>
+                            <li>Deep Learning Models</li>
+                            <li>User-Friendly Interface</li>
+                        </ul>
+                        
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>Deep Learning</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://github.com/maryamgill134/ai_grooming_assistant" target="_blank" class="btn btn-primary">View Code</a>
+                            <button class="btn btn-outline view-details" data-project="grooming">Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-project="stayease">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <button class="project-view-btn">View Details</button>
+                        </div>
+                        <div class="project-tag">Full-Stack</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>StayEase (FYP)</h3>
+                        <p>Smart rental management system connecting landlords and tenants with secure payments, listings, and property verification.</p>
+                        
+                        <ul class="project-features">
+                            <li>Property Listings</li>
+                            <li>Secure Payment System</li>
+                            <li>User Role Management</li>
+                            <li>Property Verification</li>
+                            <li>Booking Workflow</li>
+                            <li>Sentiment Analysis</li>
+                        </ul>
+                        
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>Stripe API</span>
+                            <span>Firebase</span>
+                            <span>Python</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://github.com/maryamgill134/StayEase_FYP" target="_blank" class="btn btn-primary">View Code</a>
+                            <button class="btn btn-outline view-details" data-project="stayease">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="contact-item">
-              <div class="contact-icon">📧</div>
-              <div class="contact-details">
-                <h4>Email</h4>
-                <a href="mailto:maryamgill134@gmail.com">maryamgill134@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">📱</div>
-              <div class="contact-details">
-                <h4>Phone</h4>
-                <a href="tel:+923046257278">+92 304 6257278</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">📍</div>
-              <div class="contact-details">
-                <h4>Location</h4>
-                <p>Gujranwala, Punjab, Pakistan</p>
-              </div>
-            </div>
-          </div>
-          <div class="contact-actions">
-            <a class="btn primary" href="mailto:maryamgill134@gmail.com">Send Email</a>
-            <a class="btn secondary" href="https://github.com/maryamgill134" target="_blank">View GitHub</a>
-            <a class="btn ghost" href="https://linkedin.com/in/maryam-fazal-gill-4401a7269" target="_blank">Connect on LinkedIn</a>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <div class="logo">MG</div>
-            <div class="footer-text">
-              <div class="name">Maryam Gill</div>
-              <div class="role">Full-Stack Developer & AI Specialist</div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-description">I'm currently available for internships and freelance projects. Feel free to reach out if you'd like to collaborate!</p>
             </div>
-          </div>
-          <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:maryamgill134@gmail.com">maryamgill134@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:+923046257278">+92 304 6257278</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Pakistan</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-actions">
+                    <a href="mailto:maryamgill134@gmail.com" class="btn btn-primary">Send Email</a>
+                    <a href="https://github.com/maryamgill134" target="_blank" class="btn btn-secondary">View GitHub</a>
+                    <a href="https://linkedin.com/in/maryam-fazal-gill-4401a7269" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
+                </div>
+            </div>
         </div>
-        <div class="footer-bottom">
-          <small>© <span id="year"></span> Maryam Gill — Crafted with precision and passion</small>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">MG</div>
+                    <div class="footer-text">
+                        <div class="name">Maryam Fazal Gill</div>
+                        <div class="role">Full-Stack Developer & AI Specialist</div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Maryam Gill — Crafted with precision and passion</p>
+            </div>
         </div>
-      </div>
     </footer>
-  </main>
 
-  <!-- Project Modal -->
-  <div id="projModal" class="modal" aria-hidden="true">
-    <div class="modal-backdrop"></div>
-    <div class="modal-panel">
-      <button class="modal-close" aria-label="close modal">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <div class="modal-content">
-        <div class="modal-image">
-          <img id="modalImg" src="" alt="Project screenshot" />
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImg" src="" alt="Project screenshot">
+                </div>
+                
+                <div class="modal-info">
+                    <div class="modal-header">
+                        <div class="modal-tag" id="modalTag"></div>
+                        <h2 id="modalTitle"></h2>
+                    </div>
+                    
+                    <p id="modalDescription"></p>
+                    
+                    <div class="modal-tech">
+                        <h4>Technologies Used</h4>
+                        <div class="tech-tags" id="modalTech"></div>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <a id="modalRepo" href="#" target="_blank" class="btn btn-primary">View Code</a>
+                        <a id="modalDemo" href="#" target="_blank" class="btn btn-secondary">Live Demo</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <div class="modal-header">
-            <div class="modal-tag" id="modalTag"></div>
-            <h2 id="modalTitle"></h2>
-          </div>
-          <p id="modalDesc"></p>
-          <div class="modal-tech">
-            <h4>Technologies Used</h4>
-            <div class="tech-tags" id="modalTech"></div>
-          </div>
-          <div class="modal-actions">
-            <a id="modalRepo" href="#" target="_blank" class="btn primary">View Code</a>
-            <a id="modalDemo" href="#" target="_blank" class="btn secondary">Live Demo</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
