@@ -1,114 +1,289 @@
 // ------------------------
-// Helpers & DOM refs
+// DOM Ready
 // ------------------------
-const yearEl = document.getElementById('year');
-if(yearEl) yearEl.textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', function() {
+  // Set current year in footer
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-const themeToggle = document.getElementById('themeToggle');
-const storedTheme = localStorage.getItem('site-theme');
-if(storedTheme === 'dark') document.body.classList.add('dark');
-themeToggle && (themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙');
+  // Initialize theme
+  initTheme();
+  
+  // Initialize navigation
+  initNavigation();
+  
+  // Initialize scroll reveal
+  initScrollReveal();
+  
+  // Initialize projects modal
+  initProjectsModal();
+  
+  // Initialize smooth scrolling
+  initSmoothScrolling();
+});
 
-themeToggle && themeToggle.addEventListener('click', () => {
+// ------------------------
+// Theme Toggle
+// ------------------------
+function initTheme() {
+  const themeToggle = document.getElementById('themeToggle');
+  const storedTheme = localStorage.getItem('site-theme');
+  
+  // Set initial theme
+  if (storedTheme === 'dark') {
+    document.body.classList.add('dark');
+  }
+  
+  // Update toggle button
+  if (themeToggle) {
+    themeToggle.innerHTML = document.body.classList.contains('dark') 
+      ? '<span class="theme-icon">☀️</span>' 
+      : '<span class="theme-icon">🌙</span>';
+    
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+}
+
+function toggleTheme() {
+  const themeToggle = document.getElementById('themeToggle');
   document.body.classList.toggle('dark');
-  const dark = document.body.classList.contains('dark');
-  themeToggle.textContent = dark ? '☀️' : '🌙';
-  localStorage.setItem('site-theme', dark ? 'dark' : 'light');
-});
+  
+  const isDark = document.body.classList.contains('dark');
+  themeToggle.innerHTML = isDark 
+    ? '<span class="theme-icon">☀️</span>' 
+    : '<span class="theme-icon">🌙</span>';
+  
+  localStorage.setItem('site-theme', isDark ? 'dark' : 'light');
+}
 
-// Mobile nav toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navList = document.querySelector('.nav-list');
-navToggle && navToggle.addEventListener('click', () => {
-  navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
-});
+// ------------------------
+// Navigation
+// ------------------------
+function initNavigation() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navList = document.querySelector('.nav-list');
+  
+  if (navToggle && navList) {
+    navToggle.addEventListener('click', function() {
+      navList.classList.toggle('active');
+      navToggle.classList.toggle('active');
+    });
+    
+    // Close mobile nav when clicking on a link
+    document.querySelectorAll('.nav-list a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        navToggle.classList.remove('active');
+      });
+    });
+    
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInsideNav = navToggle.contains(event.target) || navList.contains(event.target);
+      if (!isClickInsideNav && navList.classList.contains('active')) {
+        navList.classList.remove('active');
+        navToggle.classList.remove('active');
+      }
+    });
+  }
+}
 
-// Smooth scroll for nav links
-document.querySelectorAll('.nav-list a, .hero-ctas a').forEach(a => {
-  a.addEventListener('click', e => {
-    // leave external links alone
-    const href = a.getAttribute('href');
-    if(!href || href.startsWith('http') || href.includes('.pdf')) return;
-    e.preventDefault();
-    const t = document.querySelector(href);
-    if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
-    if(window.innerWidth < 800 && navList) navList.style.display = 'none';
+// ------------------------
+// Smooth Scrolling
+// ------------------------
+function initSmoothScrolling() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      
+      // Skip if it's an external link or PDF
+      if (!href || href.startsWith('http') || href.includes('.pdf')) return;
+      
+      e.preventDefault();
+      const target = document.querySelector(href);
+      
+      if (target) {
+        const headerHeight = document.querySelector('.site-header').offsetHeight;
+        const targetPosition = target.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
   });
-});
+}
 
 // ------------------------
-// Scroll-reveal simple
+// Scroll Reveal Animation
 // ------------------------
-const revealEls = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(en => {
-    if(en.isIntersecting) {
-      en.target.classList.add('visible');
-      revealObserver.unobserve(en.target);
+function initScrollReveal() {
+  const revealEls = document.querySelectorAll('.reveal');
+  
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  revealEls.forEach(el => revealObserver.observe(el));
+}
+
+// ------------------------
+// Projects Modal
+// ------------------------
+function initProjectsModal() {
+  const modal = document.getElementById('projModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalTag = document.getElementById('modalTag');
+  const modalTech = document.getElementById('modalTech');
+  const modalRepo = document.getElementById('modalRepo');
+  const modalDemo = document.getElementById('modalDemo');
+  const modalClose = document.querySelector('.modal-close');
+  
+  // Project data
+  const projects = {
+    smartface: {
+      title: "SmartFaceDetectorPro",
+      desc: "A Flask-based AI application for real-time face, eyes & smile detection with emotion recognition powered by a trained CNN model. Includes snapshot saving, SQLite history logs, CSV report export, and a clean HTML dashboard for live monitoring.",
+      tag: "AI · Computer Vision",
+      tech: ["Python", "Flask", "TensorFlow", "OpenCV", "SQLite", "HTML/CSS/JS"],
+      img: "images/smartface.jpg",
+      repo: "https://github.com/maryamgill134/SmartFaceDetectorPro",
+      demo: "#"
+    },
+    grooming: {
+      title: "AI Grooming Assistant",
+      desc: "Flask web app that analyzes facial features and gives personalized grooming recommendations using deep learning models. The system provides tailored advice based on facial characteristics and user preferences.",
+      tag: "Flask · Machine Learning",
+      tech: ["Python", "Flask", "Deep Learning", "OpenCV", "HTML/CSS"],
+      img: "images/grooming.jpg",
+      repo: "https://github.com/maryamgill134/ai_grooming_assistant",
+      demo: "#"
+    },
+    stayease: {
+      title: "StayEase (FYP)",
+      desc: "Smart rental management system that connects landlords and tenants with secure payments, listings, and property verification. Features a complete booking workflow, user role management, and property verification system.",
+      tag: "Full-Stack Application",
+      tech: ["React", "Node.js", "MongoDB", "Express", "JWT", "Stripe API"],
+      img: "images/stayease.jpg",
+      repo: "https://github.com/maryamgill134/StayEase_FYP",
+      demo: "#"
+    }
+  };
+  
+  // Open modal when project card is clicked
+  document.querySelectorAll('.proj-card, .view-details').forEach(element => {
+    element.addEventListener('click', function() {
+      const projectKey = this.dataset.proj || this.closest('.proj-card').dataset.proj;
+      openProjectModal(projectKey);
+    });
+  });
+  
+  // Open project modal function
+  function openProjectModal(key) {
+    const project = projects[key];
+    if (!project) return;
+    
+    // Set modal content
+    modalImg.src = project.img;
+    modalImg.alt = `${project.title} screenshot`;
+    modalTitle.textContent = project.title;
+    modalDesc.textContent = project.desc;
+    modalTag.textContent = project.tag;
+    
+    // Set technologies
+    modalTech.innerHTML = '';
+    project.tech.forEach(tech => {
+      const span = document.createElement('span');
+      span.textContent = tech;
+      modalTech.appendChild(span);
+    });
+    
+    // Set links
+    modalRepo.href = project.repo;
+    modalDemo.href = project.demo;
+    modalDemo.style.display = project.demo === '#' ? 'none' : 'inline-flex';
+    
+    // Show modal
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    
+    // Focus management for accessibility
+    modalClose.focus();
+  }
+  
+  // Close modal
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  
+  // Close modal events
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
+  
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal || e.target.classList.contains('modal-backdrop')) {
+        closeModal();
+      }
+    });
+  }
+  
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+      closeModal();
     }
   });
-},{threshold: 0.12});
-revealEls.forEach(el=>revealObserver.observe(el));
+}
 
 // ------------------------
-// Modal data (projects)
+// Additional Enhancements
 // ------------------------
-const projects = {
-  smartface: {
-    title: "SmartFaceDetectorPro",
-    desc: "AI-powered face analysis: predicts face shape, gender, hair type and skin type using ResNet-based models. Includes a front-end demo and Flask/Py backend.",
-    img: "images/smartface.jpg",
-    repo: "https://github.com/maryamgill134/SmartFaceDetectorPro",
-    demo: ""
-  },
-  grooming: {
-    title: "AI Grooming Assistant",
-    desc: "Flask-based grooming assistant that analyzes facial features and returns personalized grooming suggestions.",
-    img: "images/grooming.jpg",
-    repo: "https://github.com/maryamgill134/ai_grooming_assistant",
-    demo: ""
-  },
-  stayease: {
-    title: "StayEase (FYP)",
-    desc: "Rental property management system connecting landlords and tenants; features listings, booking workflow, and user roles.",
-    img: "images/stayease.jpg",
-    repo: "https://github.com/maryamgill134/StayEase_FYP",
-    demo: ""
-  }
-};
 
-// Modal elements
-const modal = document.getElementById('projModal');
-const modalImg = document.getElementById('modalImg');
-const modalTitle = document.getElementById('modalTitle');
-const modalDesc = document.getElementById('modalDesc');
-const modalRepo = document.getElementById('modalRepo');
-const modalDemo = document.getElementById('modalDemo');
-const modalClose = document.querySelector('.modal-close');
-
-document.querySelectorAll('.proj-card').forEach(card => {
-  card.addEventListener('click', () => openProject(card.dataset.proj));
-  card.addEventListener('keyup', (e)=>{ if(e.key === 'Enter') openProject(card.dataset.proj); });
+// Add loading animation
+window.addEventListener('load', function() {
+  document.body.classList.add('loaded');
 });
 
-function openProject(key){
-  const p = projects[key];
-  if(!p) return;
-  modalImg.src = p.img;
-  modalTitle.textContent = p.title;
-  modalDesc.textContent = p.desc;
-  modalRepo.href = p.repo;
-  modalDemo.href = p.demo || '#';
-  modal.setAttribute('aria-hidden','false');
-  document.body.style.overflow = 'hidden';
+// Add scroll progress indicator (optional)
+function addScrollProgress() {
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  progressBar.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    z-index: 9999;
+    transition: width 0.1s ease;
+  `;
+  document.body.appendChild(progressBar);
+  
+  window.addEventListener('scroll', function() {
+    const winHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset;
+    const trackLength = docHeight - winHeight;
+    const progress = Math.floor(scrollTop / trackLength * 100);
+    
+    progressBar.style.width = progress + '%';
+  });
 }
 
-modalClose && modalClose.addEventListener('click', closeModal);
-modal && modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
-function closeModal(){
-  modal.setAttribute('aria-hidden','true');
-  document.body.style.overflow = '';
-}
-
-// Accessibility: close with Esc
-document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+// Uncomment to enable scroll progress bar
+// addScrollProgress();
