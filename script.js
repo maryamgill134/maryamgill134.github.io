@@ -116,7 +116,7 @@ function initProjectsModal() {
             title: "StayEase (FYP)",
             description: "Smart rental management system that connects landlords and tenants with secure payments, listings, and property verification. Features a complete booking workflow, user role management, and property verification system.",
             tag: "Full-Stack Application",
-            tech: ["React", "Node.js", "MongoDB", "Express", "JWT", "Stripe API"],
+            tech: ["React Native", "Stripe API", "Firebase", "Python", "Sentiment Analysis"],
             image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
             repo: "https://github.com/maryamgill134/StayEase_FYP",
             demo: "#"
@@ -226,33 +226,3 @@ function initSmoothScrolling() {
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
 });
-
-// Add scroll progress indicator (optional)
-function addScrollProgress() {
-    const progressBar = document.createElement('div');
-    progressBar.className = 'scroll-progress';
-    progressBar.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary), var(--secondary));
-        z-index: 9999;
-        transition: width 0.1s ease;
-    `;
-    document.body.appendChild(progressBar);
-    
-    window.addEventListener('scroll', function() {
-        const winHeight = window.innerHeight;
-        const docHeight = document.documentElement.scrollHeight;
-        const scrollTop = window.pageYOffset;
-        const trackLength = docHeight - winHeight;
-        const progress = Math.floor(scrollTop / trackLength * 100);
-        
-        progressBar.style.width = progress + '%';
-    });
-}
-
-// Uncomment to enable scroll progress bar
-// addScrollProgress();
