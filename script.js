@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initProjectsModal();
     initCurrentYear();
     initSmoothScrolling();
+    initParticleEffect();
+    initTypingEffect();
+    initHoverEffects();
 });
 
 // Theme Toggle
@@ -226,3 +229,88 @@ function initSmoothScrolling() {
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
 });
+
+// Particle Effect for Hero Section
+function initParticleEffect() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.cssText = `
+            position: absolute;
+            width: ${Math.random() * 4 + 2}px;
+            height: ${Math.random() * 4 + 2}px;
+            background: ${Math.random() > 0.5 ? 'var(--primary)' : 'var(--secondary)'};
+            border-radius: 50%;
+            opacity: ${Math.random() * 0.5 + 0.1};
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            animation: float ${Math.random() * 10 + 10}s ease-in-out infinite;
+            animation-delay: ${Math.random() * 5}s;
+        `;
+        hero.appendChild(particle);
+    }
+}
+
+// Typing Effect for Hero Title
+function initTypingEffect() {
+    const title = document.querySelector('.hero-title');
+    if (!title) return;
+
+    const text = title.textContent;
+    title.textContent = '';
+    title.style.borderRight = '2px solid var(--primary)';
+
+    let i = 0;
+    const typeWriter = () => {
+        if (i < text.length) {
+            title.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        } else {
+            title.style.borderRight = 'none';
+        }
+    };
+
+    setTimeout(typeWriter, 1000);
+}
+
+// Enhanced Hover Effects
+function initHoverEffects() {
+    // Add magnetic effect to buttons
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0, 0)';
+        });
+    });
+
+    // Add ripple effect to buttons
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple';
+            ripple.style.cssText = `
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                animation: ripple 0.6s linear;
+                left: ${e.offsetX}px;
+                top: ${e.offsetY}px;
+            `;
+            
+            this.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+}
